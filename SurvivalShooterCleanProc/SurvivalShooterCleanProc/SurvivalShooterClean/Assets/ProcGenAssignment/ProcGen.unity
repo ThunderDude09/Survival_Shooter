@@ -2117,8 +2117,10 @@ MonoBehaviour:
   testColumn: 0
   testType: 0
   entrance: 0
-  twoChoices: 0
-  threeChoices: 0
+  leftRight: 0
+  upDown: 0
+  horizontalOrVertical: 0
+  path: 0
 --- !u!4 &359187829
 Transform:
   m_ObjectHideFlags: 0
