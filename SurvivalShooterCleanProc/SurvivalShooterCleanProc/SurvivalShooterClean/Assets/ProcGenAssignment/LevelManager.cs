@@ -37,21 +37,22 @@ public class LevelManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         entrance = Random.Range(1, 4);
+        //testType = 4;
         if (entrance == 1)
         {
-            AddRoom(testRow = 0, testColumn = 0, testType);
+            AddRoom(testRow = 0, testColumn = 0, testType = 4);
         }
         if (entrance == 2)
         {
-            AddRoom(testRow = 0, testColumn = 1, testType);
+            AddRoom(testRow = 0, testColumn = 1, testType = 4);
         }
         if (entrance == 3)
         {
-            AddRoom(testRow = 0, testColumn = 2, testType);
+            AddRoom(testRow = 0, testColumn = 2, testType = 4);
         }
         if (entrance == 4)
         {
-            AddRoom(testRow = 0, testColumn = 3, testType);
+            AddRoom(testRow = 0, testColumn = 3, testType = 4);
         }
     }
 	
@@ -62,7 +63,14 @@ public class LevelManager : MonoBehaviour {
         {
             AddRoom(testRow, testColumn, testType);
         }
-        while (path < 5)
+        /*for (testRow = 0; testRow < 6; testRow++)
+        {
+            for (testColumn = 0; testColumn < 6; testColumn++)
+            {
+
+            }
+        }*/
+        while (path < 14)
         {
             
             MakePath();
@@ -97,41 +105,56 @@ public class LevelManager : MonoBehaviour {
     public void MakePath()
     {
         Debug.Log("roomMade");
-        horizontalOrVertical = Random.Range(1, 5);
+        horizontalOrVertical = Random.Range(1, 6);
+        
         if (horizontalOrVertical == 1 && testColumn == 0)
         {
+            testType = Random.Range(1, 4);
             AddRoom(testRow += 1, testColumn, testType);
         }
         else if (horizontalOrVertical == 1)
         {
+            testType = Random.Range(2, 4);
             AddRoom(testRow, testColumn -= 1, testType);
         }
         else if (horizontalOrVertical == 2 && testColumn == 0)
         {
+            testType = Random.Range(2, 4);
             AddRoom(testRow, testColumn += 1, testType);
         }
         else if (horizontalOrVertical == 2)
         {
+            testType = Random.Range(2, 4);
             AddRoom(testRow, testColumn -= 1, testType);
         }
         else if (horizontalOrVertical == 3 && testColumn == 0)
         {
+            testType = Random.Range(1, 4);
             AddRoom(testRow += 1, testColumn, testType);
         }
         else if (horizontalOrVertical == 3)
         {
+            testType = Random.Range(2, 4);
             AddRoom(testRow, testColumn += 1, testType);
         }
         else if (horizontalOrVertical == 4 && testColumn == 0)
         {
+            testType = Random.Range(2, 4);
             AddRoom(testRow, testColumn -= 1, testType);
         }
         else if (horizontalOrVertical == 4)
         {
+            testType = Random.Range(2, 4);
             AddRoom(testRow, testColumn -= 1, testType);
         }
         else if (horizontalOrVertical == 5)
         {
+            testType = Random.Range(1, 4);
+            AddRoom(testRow += 1, testColumn, testType);
+        }
+        else if (horizontalOrVertical == 6)
+        {
+            testType = Random.Range(1, 4);
             AddRoom(testRow += 1, testColumn, testType);
         }
     }
